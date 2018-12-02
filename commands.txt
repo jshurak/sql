@@ -1,4 +1,4 @@
-docker run --name sql -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@ssW0rd' -p 1433:1433 -d js-sql
+docker run --name sql -e ACCEPT_EULA=Y -e SA_PASSWORD=P@ssW0rd -p 1433:1433 -d js-sql:latest
 
 
 docker exec sql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'P@ssW0rd' -Q 'select @@servername'
